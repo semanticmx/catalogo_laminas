@@ -39,3 +39,31 @@ class OrderHistory(models.Model):
             self.total_price = self.minimum_price
 
         return super().save(force_insert=False, force_update=False, using=None, update_fields=None)
+
+
+class Company(models.Model):
+    """
+    name
+    contact_phone
+    support_phone
+    sales_phone
+
+    """
+    name = models.CharField(max_length=50)
+    contact_phone = models.CharField(max_length=18)
+    support_phone = models.CharField(max_length=18)
+    sales_phone = models.CharField(max_length=18)
+
+
+class Client(models.Model):
+    """
+    client_no
+    name
+
+    """
+    client_no = models.CharField(max_length=12)
+    name = models.CharField(max_length=50)
+    company = models.ForeignKey(Company, on_delete=models.DO_NOTHING, null=True)
+
+    def __str__(self):
+        return f'Cliente: {self.pk} - {self.name}'

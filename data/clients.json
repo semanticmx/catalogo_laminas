@@ -1,0 +1,1 @@
+[{"model": "clients.client", "pk": 3, "fields": {"client_no": "CP003", "name": "Cliente Tres", "company": 1}}, {"model": "clients.client", "pk": 4, "fields": {"client_no": "CP004", "name": "Cliente Cuatro", "company": 1}}]

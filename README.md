@@ -2,8 +2,10 @@
 Catálogo de Láminas por Cliente
 
 # Instalación
-git clone git@github.com:semanticmx/catalogo_laminas.git -b develop
-pip install -r requirements.txt
+* git clone git@github.com:semanticmx/catalogo_laminas.git -b develop
+* cd catalogo_laminas
+* python -m venv catalogo_laminas
+* pip install -r requirements.txt
 
 # Configuración
 * Actualizar la configuración de ALLOWED_HOSTS
