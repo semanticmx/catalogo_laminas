@@ -18,6 +18,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from clients import views as clients_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # /company/<company_id>/empleado/<empleado_id>/
+    path('company/<int:company_id>/empleado/<str:employee_id>/',
+         clients_views.company_detail, name='company-detail'),
+    # /company/
+    path('company/',
+         clients_views.company_list, name='company-list')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

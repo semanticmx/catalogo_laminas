@@ -1,0 +1,13 @@
+{% extends "company/base.html" %}
+
+{% block appcontent %}
+<div class="container">
+    <h3>{{ company_name }}</h3>
+
+    <p>Contacto: {{ contact_number }}</p>
+
+    <a href="{% url 'company-list' %}">Listado</a>
+</div>
+{% endblock %}
+
+{% block sitetitle %}Detalle de la Compañia | {{ company_name }}{% endblock %}

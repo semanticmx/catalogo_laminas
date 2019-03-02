@@ -1,0 +1,27 @@
+{% extends "company/base.html" %}
+
+{% block appcontent %}
+<h3>Lista de Compañias</h3>
+
+<ul>
+    {% for company in companies %}
+    <li><a href="{% url 'company-detail' company.pk 32 %}">{{ company.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block sitetitle %}Listado de Compañias{% endblock %}
+
+{% block subscribe_form %}
+<strong>Agregar nueva.</strong>
+<div>
+    {{ form.email.errors }}
+    {{ form.terms.errors }}
+    {{ form.non_field_errors }}
+    <form action="{% url 'company-list' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="Agregar">
+</form>
+</div>
+{% endblock %}
